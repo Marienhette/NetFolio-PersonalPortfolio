@@ -1,0 +1,160 @@
+
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #f2f2f2;
+      background-image: url(logbg.png);
+      background-size: cover;
+      position: center;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #5f5c34;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: center;
+      margin-top: 10%;
+      opacity: 0.7;
+    }
+    
+    h1 {
+      text-align: center;
+      color: aliceblue;
+      font-size: 40px;
+    }
+    p{
+      text-align: center;
+      color: aliceblue;
+      font-size: 15px;
+      opacity: 0.8;
+
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      color: aliceblue;
+      font-size: 17px;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #8b8a8a;
+      border-radius: 4px;
+      box-sizing: border-box;
+      border-radius: 20px;
+    }
+    
+    button {
+      width: 50%;
+      padding: 12px;
+      background-color: #877957;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 25px;
+      margin-left: 25%;
+      font-size: 15px;
+      
+    }
+    
+    button:hover {
+      background-color: #404129;
+    }
+    
+    .error-message {
+      color: aliceblue;
+      margin-top: 10px;
+      margin-left: 10%;
+    }
+    .navbar
+{
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;
+}
+.navbar ul li a
+{
+  float: left;
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 20px;
+  list-style: none;
+  word-spacing: 2px;
+  padding: 14px 16px;
+  display: inline-flex;
+}
+.navbar ul li a:hover
+{
+  background: #999;
+  color: black;
+}
+.contain
+{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height:100vh;
+    width:100%;
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  </style>
+</head>
+<body>
+   
+  <div class="container">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <p> Username: Intro_to_Comprog <br> Password: 54321</p>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Login</button>
+    </form>
+    <div id="errorMessage" class="error-message"></div>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const errorMessage = document.getElementById('errorMessage');
+    let attempts = 3;
+
+    loginForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === 'Intro_to_Comprog' && password === '54321') {
+        // Successful login
+        window.location.href="index.html";
+        alert("Welcome to Art Haven!! Please hover your cursor under the text to see surprises!!")
+      } else {
+        attempts--;
+        if (attempts === 0) {
+          errorMessage.textContent = 'Login failed. Please try again later.';
+          document.getElementById('username').disabled = true;
+          document.getElementById('password').disabled = true;
+          document.querySelector('button[type="submit"]').disabled = true;
+        } else {
+          errorMessage.textContent = `Invalid username or password. ${attempts} attempts remaining.`;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

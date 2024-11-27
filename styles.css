@@ -1,0 +1,163 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #060504;
+}
+.container
+{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height:100vh;
+    width:100%;
+    background-image: url(bgd.jpg);
+    box-sizing: border-box;
+    padding: 0;
+  }
+h1
+{
+  font-family: 'Times New Roman';
+  font-size: 110px;
+  color: aliceblue;
+  padding-top: 7%;
+  padding-left: 32%;
+  padding-right: -30%;
+  font-stretch: ultra-condensed;
+  position: top center;
+
+
+}
+p
+{
+  font-family: 'Times New Roman', Times, serif;
+  color: aliceblue;
+  position: relative;
+  margin-left: 22vw;
+  opacity: 0.9;
+  font-size: 15px;
+  margin-top: 20px;
+
+}
+.navbar
+{
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;
+}
+.navbar ul li a
+{
+  float: left;
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 20px;
+  list-style: none;
+  word-spacing: 2px;
+  padding: 14px 16px;
+  display: inline-flex;
+}
+.navbar ul li a:hover
+{
+  background: #999;
+  color: black;
+}
+
+.card
+{
+  width: 280px;
+  height: 300px;
+  display: inline-block;
+  border-radius: none;
+  padding-left: 30px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.5s;
+  margin-top: 7%;
+  margin-left: 1vw;
+  
+}
+.card1
+{
+  margin-left: 8px;
+  margin-top: 5%;
+}
+.card1 div a
+{
+  color: aliceblue;
+  text-shadow: 0 0 0 5px #999;
+  text-decoration: none;
+  position: center;
+  margin-left: 65px;
+ 
+}
+.card2 div a
+{
+  color: aliceblue;
+  text-shadow: 0 0 0 5px #999;
+  text-decoration: none;
+  position: center;
+  margin-left: 85px;
+ 
+}
+
+.card3 div a
+{
+  color: aliceblue;
+  text-shadow: 0 0 0 5px #999;
+  text-decoration: none;
+  position: center;
+  margin-left: 7%;
+  margin-right: 0;
+ 
+}
+
+.card4 div a
+{
+  color: aliceblue;
+  text-shadow: 0 0 0 5px #999;
+  text-decoration: none;
+  position: center;
+  margin-left: 35px;
+  margin-right: 0;
+ 
+}
+
+
+.card:hover
+{
+  transform: translate(-10px);
+}
+
+.card div{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: aliceblue;
+  margin-bottom: 5px;
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0s, opacity 0.5s linear; 
+  transition: visibility 0s, opacity 0.5s linear;
+
+}
+
+
+.card:hover{
+  cursor: pointer;
+}
+
+.card:hover div{
+  width: 170px;
+  padding: 5%;
+  visibility: visible;
+  opacity: 1; 
+  font-size: 25px;
+  font-weight: bolder;
+  
+}
